@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
+
     @RequestMapping(value = "/")
     public String test() {
         return "jmhcvc";
