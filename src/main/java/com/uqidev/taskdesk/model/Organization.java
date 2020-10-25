@@ -32,9 +32,9 @@ public class Organization extends Auditable<Organization>{
     @JsonBackReference
     private User user;
 
-    /*@OneToMany(mappedBy = "organization",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "organization",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<Team> teams;*/
+    private List<Team> teams;
 
     /*@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference

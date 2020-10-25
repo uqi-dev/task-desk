@@ -35,9 +35,9 @@ public class User extends Auditable<User> {
     @JsonManagedReference
     private List<Organization> organizations;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    /*@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<Team> teams;
+    private List<Team> teams;*/
 
 /*    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //    @JsonManagedReference

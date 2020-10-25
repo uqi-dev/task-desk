@@ -21,15 +21,15 @@ public class Team extends Auditable<Team>{
 
     @ManyToOne
     @JsonBackReference
-    private User user;
+    private Organization organization;
+
+
+
+
 
     /*@ManyToOne
     @JsonBackReference
-    private Organization organization;*/
-
-
-
-
+    private User user;*/
 
 
     /*@ManyToOne(fetch = FetchType.LAZY)
