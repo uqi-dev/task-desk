@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
@@ -23,4 +25,10 @@ public class UserController {
         userService.createUser(user);
         return new ResponseEntity<>(new Response(201, "User Create Successfuly"), HttpStatus.CREATED);
     }
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public List<User> getAllUser() {
+        return userService.getAllUser();
+    }
+
 }

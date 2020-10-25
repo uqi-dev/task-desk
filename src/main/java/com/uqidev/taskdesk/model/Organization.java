@@ -1,22 +1,19 @@
 package com.uqidev.taskdesk.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
 @EntityListeners(AuditingEntityListener.class)
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Organization extends Auditable<Organization>{
 
     @Id
@@ -27,13 +24,17 @@ public class Organization extends Auditable<Organization>{
     private String email;
     private String phone;
     private String businessType;
-    private String descreption;
+    private String description;
     private String logo;
     private String address;
 
-
     @ManyToOne
+    @JsonBackReference
     private User user;
+
+    /*@OneToMany(mappedBy = "organization",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Team> teams;*/
 
     /*@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
