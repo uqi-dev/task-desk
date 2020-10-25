@@ -2,11 +2,13 @@ package com.uqidev.taskdesk.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -22,6 +24,10 @@ public class Team extends Auditable<Team>{
     @ManyToOne
     @JsonBackReference
     private Organization organization;
+
+    @OneToMany(mappedBy = "team",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Project> projects;
 
 
 
