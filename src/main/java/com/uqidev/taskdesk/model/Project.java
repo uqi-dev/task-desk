@@ -9,6 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -32,7 +33,7 @@ public class Project extends Auditable<Project>{
 
 
 
-    /*@ManyToMany(fetch = FetchType.EAGER)
+    /*@ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "team_teamMember", joinColumns = {@JoinColumn(name = "team_id", referencedColumnName = "id")},
             inverseJoinColumns = {
                     @JoinColumn(name = "teamMember_id", referencedColumnName = "id")})

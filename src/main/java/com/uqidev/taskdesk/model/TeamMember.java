@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -22,11 +23,14 @@ public class TeamMember extends Auditable<TeamMember>{
     private Boolean isOwner;
     private Boolean isAdmin;
 
-    /*@ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "project_teamMember", joinColumns = {@JoinColumn(name = "team_id", referencedColumnName = "id")},
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+    private Set<Project> projects;
+
+    /*@ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "project_teamMember", joinColumns = {@JoinColumn(name = "team_member_id", referencedColumnName = "id")},
             inverseJoinColumns = {
                     @JoinColumn(name = "teamMember_id", referencedColumnName = "id")})
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Project> teamMember;*/
+    private Set<Project> projects;*/
 
 }

@@ -23,7 +23,7 @@ public class ProjectController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public ResponseEntity<?> addProject(@RequestBody Project project) {
         projectService.createProject(project);
-        return new ResponseEntity<>(new Response(201, "User Create Successfuly"), HttpStatus.CREATED);
+        return new ResponseEntity<>(new Response(201, "Project Created Successfully"), HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
