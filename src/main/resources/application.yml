@@ -4,8 +4,8 @@ server:
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/uqidesk?useSSL=false
-    username: root
-    password:
+    username: shetu
+    password: Root1234&
 
   jpa:
     show-sql: true

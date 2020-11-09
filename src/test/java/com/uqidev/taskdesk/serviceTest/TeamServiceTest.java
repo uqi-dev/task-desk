@@ -6,9 +6,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @Slf4j
-public class TeamService {
+public class TeamServiceTest {
+
     @Test
     public void saveTeam(){
+    }
+
+    @Test
+    public void saveAllTeams(){
+    }
+
+    @Test
+    public void updateTeam(){
 
     }
 
@@ -21,4 +30,6 @@ public class TeamService {
     public void findAllTeams(){
 
     }
+
+   
 }

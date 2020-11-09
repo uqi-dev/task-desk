@@ -1,5 +1,6 @@
 package com.uqidev.taskdesk.service;
 
+import com.uqidev.taskdesk.dto.TeamInterface;
 import com.uqidev.taskdesk.model.Team;
 import com.uqidev.taskdesk.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class TeamService {
         return teamRepository.save(team);
     }
 
-    public List<Team> getAllTeam() {
-        return teamRepository.findAll();
+    public List<TeamInterface> getAllTeams() {
+        return teamRepository.findTeamsBy();
     }
 }

@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -11,10 +13,12 @@ import java.util.List;
 
 
 @Entity
-@Data
-@EqualsAndHashCode(callSuper = true)
-@EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Getter
+@Setter
+//@Data
+//@EqualsAndHashCode(callSuper = true)
+//@EntityListeners(AuditingEntityListener.class)
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class User extends Auditable<User> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

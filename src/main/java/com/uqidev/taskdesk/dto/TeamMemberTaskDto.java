@@ -1,2 +1,4 @@
-package com.uqidev.taskdesk.dto;public class TeamMemberTaskDto {
+package com.uqidev.taskdesk.dto;
+
+public class TeamMemberTaskDto {
 }

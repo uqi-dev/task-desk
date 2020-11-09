@@ -1,6 +1,8 @@
 package com.uqidev.taskdesk.model;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -12,9 +14,11 @@ import java.util.Date;
 
 import static javax.persistence.TemporalType.TIMESTAMP;
 
-@Data
-@MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
+//@Data
+@Getter
+@Setter
+//@MappedSuperclass
+//@EntityListeners(AuditingEntityListener.class)
 public abstract class Auditable<U> {
 
     @CreatedDate

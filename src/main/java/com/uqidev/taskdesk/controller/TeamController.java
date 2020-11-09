@@ -1,7 +1,7 @@
 package com.uqidev.taskdesk.controller;
 
+import com.uqidev.taskdesk.dto.TeamInterface;
 import com.uqidev.taskdesk.model.Team;
-import com.uqidev.taskdesk.model.User;
 import com.uqidev.taskdesk.response.Response;
 import com.uqidev.taskdesk.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +28,8 @@ public class TeamController {
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public List<Team> getAllUser() {
-        return teamService.getAllTeam();
+    public List<TeamInterface> getAllTeams() {
+        return teamService.getAllTeams();
     }
 
 }

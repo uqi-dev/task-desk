@@ -10,10 +10,11 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Data
-@EqualsAndHashCode(callSuper = true)
-@EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Getter
+@Setter
+//@EqualsAndHashCode(callSuper = true)
+//@EntityListeners(AuditingEntityListener.class)
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Organization extends Auditable<Organization>{
 
     @Id
